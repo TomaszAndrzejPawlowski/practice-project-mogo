@@ -1,0 +1,39 @@
+body {
+  margin: 30px auto;
+  font-family: "Sarala", sans-serif;
+  font-weight: 400;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+.container {
+  max-width: 480px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  @include tablet {
+    max-width: 768px;
+  }
+  @include desktop {
+    max-width: 1440px;
+  }
+}
+a {
+  text-decoration: none;
+  color: getColor("main-headline");
+  &:hover,
+  &:focus,
+  &:visited:hover,
+  &:visited:focus {
+    color: getColor("secondary");
+  }
+}
+button {
+  cursor: pointer;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}

@@ -1,0 +1,138 @@
+.team-section {
+  &__kicker {
+    font-family: "Dancing Script", cursive;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 28px;
+  }
+  &__headline {
+    text-align: center;
+    margin: 10px auto;
+    font-size: 34px;
+    font-weight: 700;
+  }
+  &__underline::after {
+    content: "";
+    background-color: getColor("primary");
+    display: block;
+    position: relative;
+    top: -10px;
+    width: 60px;
+    height: 3px;
+    border-radius: 1px;
+    margin: 30px auto 0;
+    @include desktop {
+      top: 10px;
+    }
+  }
+  &__text {
+    text-align: center;
+    margin: 20px auto;
+    width: 400px;
+    font-size: 12px;
+    line-height: 20px;
+    @include tablet {
+      margin: 40px auto;
+      width: 600px;
+    }
+    @include desktop {
+      width: 1000px;
+    }
+  }
+}
+.team-list {
+  position: relative;
+  display: grid;
+  grid-auto-flow: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  @include tablet {
+    grid-auto-flow: column;
+  }
+  &__img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 308px;
+    height: 380px;
+    background-image: getColor("primary-gradient");
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    @include tablet {
+      width: 228px;
+      height: 280px;
+    }
+    @include desktop {
+      width: 308px;
+      height: 380px;
+    }
+  }
+  &__img-background {
+    position: relative;
+    background-color: getColor("background");
+    &:hover .team-list__img-overlay {
+      opacity: 1;
+    }
+  }
+  &__img {
+    max-height: 380px;
+    position: relative;
+    @include tablet {
+      max-height: 280px;
+    }
+    @include desktop {
+      max-height: 380px;
+    }
+  }
+  &__img-container {
+    transition: 1s cubic-bezier(0.4, 0, 0.2, 1);
+    &:hover {
+      transform: translate(-10px, -10px);
+    }
+  }
+  &__member {
+    font-size: 12px;
+    text-align: center;
+    margin: 30px auto 0;
+  }
+  &__role {
+    font-size: 12px;
+    text-align: center;
+  }
+  &__icons-container {
+    position: relative;
+    top: 170px;
+    @include tablet {
+      top: 128px;
+    }
+    @include desktop {
+      top: 170px;
+    }
+  }
+  &__icons-list {
+    margin: auto;
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: center;
+  }
+  &__icons-list-item {
+    background-color: getColor("secondary");
+    padding: 8px;
+    &:nth-child(-n + 3) {
+      border-right: 1px solid getColor("primary");
+    }
+    &:hover {
+      background-color: getColor("primary");
+    }
+    &:hover .team-list__icon {
+      fill: getColor("main-headline");
+    }
+  }
+  &__icon {
+    fill: getColor("primary");
+  }
+}

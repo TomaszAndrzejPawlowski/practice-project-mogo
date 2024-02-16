@@ -1,0 +1,12 @@
+$colors: (
+  "primary-gradient": linear-gradient(to bottom, #f38181e5, #fce38ae5),
+  "primary": #f38181,
+  "secondary": #fce38a,
+  "background": #95e1d3,
+  "img-placeholder": #eaffd0,
+  "main-headline": #fff,
+);
+
+@function getColor($key) {
+  @return map-get($colors, $key);
+}

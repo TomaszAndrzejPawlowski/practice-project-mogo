@@ -1,0 +1,89 @@
+.hero {
+  margin-top: 30px;
+  position: relative;
+  top: -50px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: getColor("img-placeholder");
+  background-image: url(../images//banner/eagle-mobile-x1.jpg);
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url(../images/banner/eagle-mobile-x2.jpg);
+  }
+  @include tablet {
+    margin: 0;
+    background-image: url(../images/banner/eagle-tablet-x1.jpg);
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url(../images/banner/eagle-tablet-x2.jpg);
+    }
+  }
+  @include desktop {
+    background-image: url(../images/banner/eagle-desktop-x1.jpg);
+    height: 780px;
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url(../images/banner/eagle-desktop-x2.jpg);
+    }
+  }
+  &__overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: getColor("primary-gradient");
+    padding: 40px 0;
+    height: 287px;
+    @include tablet {
+      height: 456px;
+      padding: 118px 0;
+    }
+    @include desktop {
+      height: 780px;
+      padding: 160px 0;
+    }
+  }
+  &__kicker {
+    color: getColor("main-headline");
+    font-family: "Dancing Script", cursive;
+    text-align: center;
+    margin: 0 auto;
+    @include tablet {
+      font-size: 42px;
+    }
+    @include desktop {
+      font-size: 54px;
+    }
+  }
+  &__headline {
+    color: getColor("main-headline");
+    text-align: center;
+    margin: 20px auto 30px;
+    width: 240px;
+    font-size: 42px;
+    font-weight: 700;
+    @include tablet {
+      font-size: 78px;
+      width: 500px;
+      margin: 16px auto 20px;
+    }
+    @include desktop {
+      font-size: 102px;
+      margin: 20px auto 60px;
+    }
+  }
+  &__btn {
+    color: getColor("main-headline");
+    font-size: 12px;
+    padding: 6px 24px;
+    background-color: transparent;
+    border: 3px solid getColor("main-headline");
+    &:active,
+    &:hover,
+    &:focus {
+      background-color: getColor("primary");
+    }
+  }
+}

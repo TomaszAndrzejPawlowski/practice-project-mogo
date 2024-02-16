@@ -1,0 +1,87 @@
+.nav-container {
+  position: relative;
+  top: 16px;
+  z-index: 1;
+  width: 100%;
+  max-height: 60px;
+  margin: 0 auto;
+  @include tablet {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    max-width: 660px;
+  }
+  @include desktop {
+    max-width: 880px;
+    max-height: 80px;
+  }
+  &__shopping-link {
+    fill: getColor("main-headline");
+    &:hover,
+    &:focus {
+      fill: getColor("primary");
+      @include tablet {
+        fill: getColor("secondary");
+      }
+    }
+  }
+  &__magnifier-link {
+    fill: getColor("main-headline");
+    &:hover,
+    &:focus {
+      fill: getColor("primary");
+      @include tablet {
+        fill: getColor("secondary");
+      }
+    }
+  }
+  &__logo {
+    margin-left: 20px;
+    @include tablet {
+      font-size: 24px;
+      margin: 0;
+    }
+  }
+}
+.navigation {
+  margin-right: 10px;
+  grid-column: 2;
+  @include tablet {
+    margin: 0;
+    width: 100px;
+  }
+  &__list {
+    display: grid;
+    grid-auto-flow: row;
+    row-gap: 14px;
+    justify-content: end;
+    justify-items: end;
+    width: 80px;
+    position: absolute;
+    right: 10px;
+    @include tablet {
+      grid-auto-flow: column;
+      column-gap: 30px;
+      row-gap: 0;
+      margin: 0;
+    }
+  }
+  @include tablet {
+    &__link {
+      &--underline {
+        color: getColor("secondary");
+        &::after {
+          content: "";
+          background-color: getColor("secondary");
+          display: block;
+          position: relative;
+          top: 10px;
+          width: 50px;
+          height: 4px;
+          border-radius: 2px;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}

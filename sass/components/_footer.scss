@@ -1,0 +1,49 @@
+.footer {
+  max-width: 1000px;
+  margin: 40px auto;
+  border-top: 1px solid #00000020;
+  display: grid;
+  grid-auto-flow: row;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+  @include tablet {
+    padding-top: 10px;
+    grid-auto-flow: column;
+    justify-content: space-between;
+  }
+  &__credits {
+    grid-row: 2;
+    @include tablet {
+      grid-row: 1;
+    }
+    font-size: 12px;
+    &--highlighted {
+      color: getColor("primary");
+    }
+  }
+}
+.form {
+  border: 1px solid #00000020;
+  width: 380px;
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: space-between;
+  &__input {
+    margin-left: 10px;
+    height: 25px;
+    width: 200px;
+    border: none;
+    outline-color: transparent;
+    font-size: 12px;
+  }
+  &__btn {
+    color: getColor("main-headline");
+    font-weight: 700;
+    font-size: 12px;
+    padding: 12px 26px;
+    background-color: getColor("background");
+    border: none;
+  }
+}
